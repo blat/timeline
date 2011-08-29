@@ -1,0 +1,14 @@
+settings:
+    title: My slop!
+
+services:
+    my_flickr:
+        type: fickr
+        user_id: # My Flickr user ID
+        api_key: # My Flickr API key
+    my_first_site:
+        type: rss
+        url: http://my.first.site.com/rss # A first RSS
+    my_second_site:
+        type: rss
+        url: http://my.second.site.com/rss # A second RSS

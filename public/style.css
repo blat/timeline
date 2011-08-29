@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    color: #222;
+}
+
+#header h1,
+#content,
+#footer {
+    margin: 0 auto;
+    width: 650px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 10px 25px;
+}
+#header h1 { border-color: #444; }
+#footer {
+    border: none;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    font-size: 11px;
+    color: #777;
+}
+
+#header {
+    background: #000;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+#content {
+    padding-top: 66px;
+}
+
+h1 a { color: #fff; text-decoration: none; font-family: 'Bangers'; font-size: 42px; }
+h2 { margin-bottom: 14px; }
+h2 a { color: #000; font-size: 20px; text-shadow: 0 1px 0 rgba(0, 0, 0, .7); text-decoration: none; text-transform: uppercase; }
+h3, h4 { margin: 14px 0; padding-top: 7px; font-size: 16px; }
+p { margin: 14px 0; }
+li { margin: 4px 0; }
+a { color: #000; }
+ul, ol { margin-left: 20px; }
+ul li { list-style: square; }
+
+.post { position: relative; margin-top: 10px; margin-bottom: 40px; }
+.post.text { text-align: justify; }
+.post.image { text-align: center; }
+
+.post.image span { display: block; padding-top: 5px; text-shadow: 0 1px 0 rgba(0, 0, 0, .7); text-transform: uppercase; }
+.post.image a { background: #eee; display: block; padding: 5px; text-decoration: none; }
+
+.date { text-transform: uppercase; background: #111; color: #eee; text-align: center; padding: 5px; position: absolute; font-weight: bold; left: -85px; width: 50px; }
+.dayofweek { text-align: center; font-size: 20px; }
+.dayofmonth, .month { font-size: 12px; float: left; width: 25px; }
+
+
+.wp-caption a, .wp-caption a:hover, .wp-caption img { background: #eee; margin: 0; padding: 0; 
+border: none; }
+.aligncenter { display: block; margin: 0 auto; }
+.alignright { float: right; margin: 0 0 1em 1em; }
+.alignleft { float: left; margin: 0 1em 1em 0; }
+.floatleft { float: left; }
+.floatright { float: right; }
+.wp-post-image { width: 640px; }
+.slickr-flickr-gallery img, .wp-post-image, img.aligncenter, img.alignright, img.alignleft, img.floatleft, img.floatright { border: 5px solid #eee; max-width: 640px; padding: 0; }
+.slickr-flickr-gallery li { display: inline-block; margin: 7px 7px 0 0; }
+.slickr-flickr-gallery ul { margin: 7px 0 14px 0; }

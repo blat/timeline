@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title><%= @title %></title>
+        <link rel='stylesheet' type='text/css' href='/style.css' />
+        <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id='wrapper'>
+            <div id='header'>
+                <h1><a href='/'><%= @title %></a></h1>
+            </div>
+            <div id='content'>
+                <%= yield %>
+            </div>
+            <div id='footer'>
+                &copy; <a href='http://www.blizzart.net'>Blizz'art</a>
+            </div>
+        </div>
+    </body>
+</html>
