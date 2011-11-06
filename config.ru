@@ -1,5 +1,5 @@
 require 'rubygems'
 require 'sinatra'
-require './slop'
+require './timeline.rb'
 
 run Sinatra::Application

@@ -1,44 +1,36 @@
+require './models/storage.rb'
 require 'date'
-require 'mongo'
 
 class Post
-    attr_accessor :checksum, :title, :date, :link, :content, :image, :type
+
+    attr_accessor :data
+
+    def initialize data
+        @data = data
+    end
+
+    def method_missing id
+        return @data[id.to_s]
+    end
 
     def save
-        data = {
-            :checksum => @checksum,
-            :title => @title,
-            :date => @date.to_time,
-            :link => @link,
-            :content => @content,
-            :image => @image,
-            :type => @type
-        }
-        Post.connect.insert(data)
+        date = @data[:date]
+        if date.instance_of? String then
+            date = DateTime.parse date
+        end
+        @data[:date] = date.strftime '%Y-%m-%d %H:%M:%S'
+        return Storage.set @data
     end
 
-    def self.get offset, limit
-        query = {}
-        options = {
-            :skip => offset,
-            :limit => limit,
-            :sort => [:date, :desc]
-        }
-        return Post.connect.find(query, options)
-    end
-
-    def self.reset
-        Post.connect.drop
-    end
-
-    private
-
-    def self.connect
-        connect = Mongo::Connection.new
-        db = connect['slop']
-        collection = db['post']
-        return collection
+    def self.load(offset = 0, limit = 20)
+        results = []
+        rows = Storage.get(offset, limit)
+        rows.each do |row|
+            row['date'] = DateTime.parse row['date']
+            post = Post.new row
+            results << post
+        end
+        return results
     end
 
 end
-

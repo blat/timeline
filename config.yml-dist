@@ -1,14 +1,22 @@
 settings:
-    title: My slop!
+    title: Alfred's public timeline
 
 services:
+    my_github:
+        type: github
+        user: alfred
+    my_blog:
+        type: wordpress
+        url: http://blog.alfred.com/
+        author: alfred
+    my_other_blog:
+        type: rss
+        url: http://www.alfred.com/feed
     my_flickr:
-        type: fickr
-        user_id: # My Flickr user ID
-        api_key: # My Flickr API key
-    my_first_site:
-        type: rss
-        url: http://my.first.site.com/rss # A first RSS
-    my_second_site:
-        type: rss
-        url: http://my.second.site.com/rss # A second RSS
+        type: flickr
+        user_id: alfred
+        api_key: 3141592654
+    my_lastfm:
+        type: lastfm
+        user: alfred
+        api_key: 3141592654

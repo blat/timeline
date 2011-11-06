@@ -1,8 +1,12 @@
 <html>
     <head>
         <title><%= @title %></title>
+        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></script>
+        <script type='text/javascript' src='/application.js'></script>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
         <link rel='stylesheet' type='text/css' href='/style.css' />
-        <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+        <link href='/rss' type='application/rss+xml' rel='alternate' />
     </head>
     <body>
         <div id='wrapper'>
@@ -10,10 +14,13 @@
                 <h1><a href='/'><%= @title %></a></h1>
             </div>
             <div id='content'>
-                <%= yield %>
+                <div class='posts'>
+                    <%= yield %>
+                </div>
+                <div class='loading'></div>
             </div>
             <div id='footer'>
-                &copy; <a href='http://www.blizzart.net'>Blizz'art</a>
+                Powered by <a href='https://github.com/blat/timeline'>Timeline</a>.
             </div>
         </div>
     </body>

@@ -1,0 +1,17 @@
+<% @posts.each do |post| %>
+    <div class='post <%= post.type %>'>
+        <div class="metadata">
+            <span class="date">
+                <span class="day"><%= post.date.strftime('%d') %></span>
+                <span class="month"><%= post.date.strftime('%b') %></span>
+                <span class="year"><%= post.date.strftime('%Y') %></span>
+            </span>
+        </div>
+            <% if not post.title.nil? then %>
+            <h2>
+                <a class="title" href='<%= post.link %>'><%= post.title %></a>
+            </h2>
+            <% end %>
+            <div class="content"><%= post.content %></div>
+    </div>
+<% end %>
