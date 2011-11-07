@@ -23,9 +23,10 @@ class Storage
     private
 
     def self.connect
-        connect = Mongo::Connection.new
-        db = connect['timeline']
-        collection = db['timeline']
+        config = YAML.load_file('./config.yml')
+        connect = Mongo::Connection.new(config['mongo']['host'], config['mongo']['port'])
+        db = connect[config['mongo']['db']]
+        collection = db[config['mongo']['collection']]
         return collection
     end
 
