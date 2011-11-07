@@ -109,55 +109,18 @@ blockquote {
     font-weight: bold;
 }
 
+.icon {
+    vertical-align: middle;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
 .content {
     text-align: justify;
 }
 
 .content a {
     background: #DDEEBB;
-}
-
-.content img {
-    background: white !important;
-    border: 1px solid #23262D;
-    vertical-align: text-top;
-}
-
-.blog .alignright {
-    float: right;
-    margin-left: 25px;
-}
-
-.blog .alignleft {
-    float: left;
-    margin-right: 25px;
-}
-
-.blog .alignright,
-.blog .alignleft {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.blog .slickr-flickr-gallery ul {
-    padding: 0;
-    margin-left: 25px;
-}
-
-.blog .slickr-flickr-gallery li {
-    float: left;
-    margin: 0 15px 10px 0;
-}
-
-.blog .slickr-flickr-gallery a {
-    background: url(/img/shadow.png) no-repeat top center;
-    height: 90px;
-    width: 81px;
-    display: inline-block;
-}
-
-.blog .slickr-flickr-gallery img {
-    margin: 2px;
 }
 
 .photo img {

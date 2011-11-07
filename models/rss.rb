@@ -16,6 +16,17 @@ class Rss < Stream
                     url = relative_url.sub('/', "#{uri.scheme}://#{uri.host}/")
                     content = content.sub(relative_url, url)
                 end
+                content = content.gsub(/<br[^>]*>/, '')
+                    .gsub(/<\/?div[^>]*>/, '')
+                    .gsub(/<img[^>]*>/, '')
+                    .gsub(/<ol(.|\n)*ol>/, '')
+                    .gsub(/<object(.|\n)*object>/, '')
+                    .gsub(/<a[^>]*><\/a>/, '')
+                    .gsub(/<p[^>]+>/, '<p>')
+                    .gsub(/<p><\/p>/, '')
+                    .split('</p>')[0,3].join('</p>')
+                uri = URI.parse entry.link
+                content += " <a href='#{entry.link}'>[...]</a></p><p><img class='icon' src='http://avatars.netvibes.com/favicon/#{uri.scheme}://#{uri.host}' /> <a href='#{entry.link}'>#{uri.host}</a></p>"
                 data = {
                     :date => entry.pubDate,
                     :link => entry.link,
