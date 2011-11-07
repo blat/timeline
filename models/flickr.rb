@@ -10,10 +10,11 @@ class Flickr < Stream
         photos = flickr.people.getPublicPhotos :user_id => @options['user_id']
         photos.each do |photo|
             info = flickr.photos.getInfo :photo_id => photo.id, :secret => photo.secret
-            content = "<a href='#{FlickRaw.url_b(info)}'><img src='#{FlickRaw.url_z(info)}' /></a><p class='legend'>#{info.title}</p>"
+            link = FlickRaw.url_photopage(info)
+            content = "<a href='#{link}'><img src='#{FlickRaw.url_z(info)}' /></a><p class='legend'>#{info.title}</p>"
             data = {
                 :date => info.dates.taken,
-                :link => FlickRaw.url_b(info),
+                :link => link,
                 :content => content,
                 :type => 'photo'
             }
