@@ -12,7 +12,7 @@ class Github < Stream
             if not repository['fork'] then
                 content = "<p>#{repository['description']}</p>"
                 if not repository['homepage'].empty? then
-                    content += "<p><a href='#{repository['homepage']}'>#{repository['homepage']}</a></p>"
+                    content += "<p><img class='icon' src='http://github.com/favicon.ico' /> <a href='#{repository['homepage']}'>#{URI.parse(repository['homepage']).host}</a></p>"
                 end
                 data = {
                     :date => repository['created_at'],
