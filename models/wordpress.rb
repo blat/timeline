@@ -8,7 +8,7 @@ class Wordpress < Stream
         page = 1
         begin
             options = {
-                'url' => "#{@options['url']}/author/#{@options['author']}/feed?paged=#{page}"
+                'url' => "#{@options['url']}/author/#{@options['author']}/feed?paged=#{page}&#{@options['additional_parameters']}"
             }
             rss = Rss.new options
             data = rss.crawl
