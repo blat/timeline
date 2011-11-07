@@ -19,6 +19,7 @@ $(document).ready(function() {
                 success: function(data) {
                     if (data.length > 0) {
                         $('.posts').append(data);
+                        $('.posts a').attr('target', '_blank');
                     } else {
                         hasMore = false;
                         $('#footer').show();
