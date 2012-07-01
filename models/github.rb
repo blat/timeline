@@ -4,11 +4,11 @@ require 'json'
 class Github < Stream
 
     def crawl
-        url = "http://github.com/api/v2/json/repos/show/#{options['user']}"
+        url = "https://api.github.com/users/#{options['user']}/repos"
         body = self.download url
         result = []
         json = JSON.parse body
-        json['repositories'].each do |repository|
+        json.each do |repository|
             if not repository['fork'] then
                 content = "<p>#{repository['description']}</p>"
                 if not repository['homepage'].empty? then
