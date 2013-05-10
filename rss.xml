@@ -1,0 +1,23 @@
+---
+layout: false
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+    <channel>
+        <title>{{ site.name | xml_escape }}</title>
+        <link>{{ site.url }}/</link>
+        <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
+        {% for post in site.posts %}
+        <item>
+            <title>{{ post.title | xml_escape }}</title>
+            <link>{{ site.url }}{{ post.url }}</link>
+            <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
+            <guid isPermalink="true">{{ site.url }}{{ post.id }}</guid>
+            <content:encoded>{{ post.content | xml_escape }}</content:encoded>
+            <author>{{ site.name | xml_escape }}</author>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>
+

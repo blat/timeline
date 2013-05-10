@@ -7,31 +7,56 @@ A Soup.io like.
 Dependances
 -----------------
 
-* sinatra
-* mongo
-* simple-rss
+* bundler
+* jekyll
+* wordpress-xmlrpc-api
 * flickraw
-* open-uri
-* json
+* github_api
+* lastfm-client
 
 
 Setup
 -----------------
 
-1. Install ruby and all dependancies (see above)
+1. Install Bundler and all dependancies:
+
+        gem install bundler
+        bundle install
 
 2. Copy config file:
 
-        cp config.yml-dist config.yml
+        cp _config.yml-dist _config.yml
 
-3. Edit `config.yml` to customize linked services
+3. Edit `_config.yml` to customize linked services:
 
-4. Run crawler:
+        name: Blat
+        twitter: mickaelb
+        avatar: http://www.gravatar.com/avatar/2f1a6b664834c9197cd9e602598d996a
 
-        ruby scripts/crawler.rb
+        timeline:
+        - wordpress:
+            url: www.example.com
+            username: admin
+            password:
+        - wordpress:
+            url: www.example2.com/blog
+            username: admin
+            password:
+        - flickr:
+            api_key:
+            user_id:  31123500@N08
+        - github:
+            username: blat
+        - lastfm:
+            api_key:
+            user: saezlive
+
+4. Import data:
+
+        ruby _timeline/import.rb
 
 5. Launch application:
 
-        ruby timeline.rb
+        jekyll --server
 
-6. Go to [http://localhost:4567](http://localhost:4567)
+6. Go to [http://localhost:4000](http://localhost:4000)

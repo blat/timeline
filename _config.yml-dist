@@ -1,0 +1,38 @@
+safe: false
+auto: false
+server: false
+server_port: 4000
+baseurl: /
+url: http://localhost:4000
+
+source: .
+destination: ./_site
+plugins: ./_plugins
+
+future: true
+lsi: false
+pygments: false
+markdown: rdiscount
+permalink: date
+
+name: Blat
+twitter: mickaelb
+avatar: http://www.gravatar.com/avatar/2f1a6b664834c9197cd9e602598d996a
+
+timeline:
+- wordpress:
+    url: www.example.com
+    username: admin
+    password:
+- wordpress:
+    url: www.example2.com/blog
+    username: admin
+    password:
+- flickr:
+    api_key:
+    user_id:  31123500@N08
+- github:
+    username: blat
+- lastfm:
+    api_key:
+    user: saezlive

@@ -1,1 +1,1 @@
-0,15,30,45  *   *   *   *   cd /path/to/timeline && ruby scripts/crawler.rb
+0  5   *   *   *   cd /path/to/timeline && ruby _timeline/import.rb

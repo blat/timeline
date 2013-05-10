@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'jekyll'
+gem 'wordpress-xmlrpc-api'
+gem 'flickraw'
+gem 'github_api'
+gem 'lastfm-client'

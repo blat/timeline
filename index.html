@@ -1,0 +1,35 @@
+---
+layout: default 
+---
+
+<div id="timeline">
+
+    <div id="line"></div>
+
+    {% for post in site.posts %}
+    <div class="post box item" href="{{ post.url }}">
+        <h3 class="title">{{ post.title }}</h3>
+        {% if post.thumbnail %}
+        <p class="thumbnail" style="background-image: url({{ post.thumbnail }})"></p>
+        {% endif %}
+        {% if post.excerpt %}
+        <div class="excerpt">
+            {{ post.excerpt }}
+        </div>
+        {% endif %}
+        <small class="meta">
+            {{ post.date | date: "%e %B %Y" }}
+            {% if post.update %}
+            to {{ post.update | date: "%e %B %Y" }}
+            {% endif %}
+            {% if post.source_url and post.source_title %}
+            &mdash;
+            <a href="{{ post.source_url }}">
+                <img class="icon" src="http://avatars.netvibes.com/favicon/{{post.source_url}}" />
+                {{post.source_title}}
+            </a>
+            {% endif %}
+        </small>
+    </div>
+    {% endfor %}
+</div>
