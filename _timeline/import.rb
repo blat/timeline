@@ -52,7 +52,10 @@ module Import
     end
 
     def format_update update
-        update.strftime('%Y-%m-%d')
+        if update then
+            update = update.strftime('%Y-%m-%d')
+        end
+        update
     end
 
     def filter_update update, date
