@@ -7,7 +7,7 @@ body {
 }
 
 a {
-    color: #6c0;
+    color: #007200;
 }
 
 #wrapper {
@@ -225,7 +225,7 @@ a {
 
 #timeline .post:hover .marker {
     z-index: 10;
-    background: #6C0;
+    background: #aa0000;
 }
 
 #timeline .year {
