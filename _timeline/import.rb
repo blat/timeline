@@ -34,7 +34,7 @@ module Import
         data = data.delete_if { |k,v| not v || v.nil? }.to_yaml
 
         filename = "%s-%s.markdown" % [date.strftime('%Y-%m-%d'), slug]
-        puts filename
+        FileUtils.mkdir '_posts' unless File.exists? '_posts'
         File.open("_posts/#{filename}", "w") do |file|
             file.puts data
             file.puts "---"
