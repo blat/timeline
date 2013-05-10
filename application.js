@@ -33,6 +33,13 @@ $(function() {
         closeEffect : 'none',
         type        : 'ajax',
         padding     : 10,
+        afterLoad   : function(obj) {
+            obj.content = $('<div>').attr('id', 'post').addClass('nano').append(
+                $('<div>').addClass('content').html(
+                    $(obj.content).find('#post').html()
+                )
+            );
+        },
         afterShow   : function() {
             $('.nano').nanoScroller();
         }
