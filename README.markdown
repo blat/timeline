@@ -7,7 +7,7 @@ A Soup.io like.
 Demo
 -----------------
 
-* [blat.fr](http//blat.fr/)
+* [blat.fr](http://blat.fr/)
 
 
 Dependances
